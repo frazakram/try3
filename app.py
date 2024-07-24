@@ -1,49 +1,37 @@
-from flask import Flask, request, jsonify, send_from_directory
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, jsonify, request, render_template
 import pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
+# Initialize Flask app
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///searches.db'
-db = SQLAlchemy(app)
 
-class Search(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    movie = db.Column(db.String(150), nullable=False)
-
-db.create_all()
-
-# Load the model and other necessary files
+# Load model components
 with open('model_components.pkl', 'rb') as file:
     cv, similarity, newmovies = pickle.load(file)
 
+# Define recommendation function
 def recommend(movie):
-    try:
-        index = newmovies[newmovies['title'] == movie].index[0]
-        distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
-        return [newmovies.iloc[i[0]].title for i in distances[1:6]]
-    except IndexError:
-        return []
+    index = newmovies[newmovies['title'] == movie].index[0]
+    distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
+    recommended_movies = [newmovies.iloc[i[0]].title for i in distances[1:6]]
+    return recommended_movies
 
-@app.route('/')
-def index():
-    return send_from_directory('static', 'index.html')
-
+# Define endpoint for recommendations
 @app.route('/recommend', methods=['GET'])
 def get_recommendations():
-    movie = request.args.get('movie')
-    if not movie:
-        return jsonify({'error': 'Please provide a movie title'}), 400
-
-    # Log the search to the database
-    new_search = Search(movie=movie)
-    db.session.add(new_search)
-    db.session.commit()
-
-    recommendations = recommend(movie)
-    if not recommendations:
-        return jsonify({'error': 'Movie not found or no recommendations available'}), 404
-
+    movie_name = request.args.get('movie')
+    if not movie_name:
+        return jsonify({'error': 'Missing parameter: movie'}), 400
+    
+    recommendations = recommend(movie_name)
     return jsonify({'recommendations': recommendations})
 
+# Define index page
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8080)
