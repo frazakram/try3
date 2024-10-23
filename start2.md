@@ -62,7 +62,7 @@ exe = Execution(session=neo_session, trace_id=1)
 ```py
 exe.execute(metric_list=['metric_name'])
 ```
-#### metric_list=['metric_name']: This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
+This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
 
 ### Step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
 ```py
