@@ -47,12 +47,7 @@ tracer.start()
 ```
 ## **Evaluation**
 Evaluating the performance of your AI agent is crucial to ensuring that it operates effectively and meets the desired goals. AgentNeo provides built-in evaluation tools that enable you to assess various aspects of your agent’s performance systematically.
-Key Aspects of Performance Evaluation
-1. Metric Tracking:
+**Key Aspects of Performance Evaluation**
+- Metric Tracking: AgentNeo enables you to define and track performance metrics such as accuracy, response time, and error rates. You can evaluate individual metrics or use a comprehensive set for a holistic view of your agent's performance.
 
-- AgentNeo allows you to define and track specific performance metrics. These metrics can include accuracy, response time, error rates, and other relevant criteria that reflect how well your agent is performing its tasks.
-- You can run evaluations on individual metrics or a comprehensive set of metrics to get a holistic view of your agent's performance.
-2. Execution of Evaluations:
-
-- By creating an Execution instance and passing the necessary parameters, you can initiate the evaluation process for your AI agent.
-- The execution object enables you to run specific metrics and retrieve their results, allowing for detailed analysis.
+- Execution of Evaluations: By creating an Execution instance, you can initiate the evaluation process for your AI agent. This allows you to run specific metrics and retrieve results for detailed analysis.
