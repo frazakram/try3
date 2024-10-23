@@ -54,57 +54,36 @@ def my_agent_function():
     # Your agent logic here
     pass
 ```
-After using execution and evalution model you have to [Stop Tracer](#stoptracer)
-## **Execution**
-Utilizing the Execution class in AgentNeo provides you with a powerful way to gain insights into your application's performance and flow. By running specific metrics and retrieving detailed execution results, you can visualize how your AI agent operates under different conditions
+After using execution and evalution model you have to stop tracer
 Here's how to do it:
-
-### Step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
-
-```py
-exe = Execution(session=neo_session, trace_id=1)
-```
-
-#### neo_session: This refers to the current session you established, ensuring that all metrics and traces are logged correctly.
-#### trace_id=1: This unique identifier allows you to focus on a specific trace within your session, providing clarity in your evaluations.
-### Step 2. Run a Metric:After executing the metric, you can obtain the results, which provides detailed insights into the performance metrics you've defined
-
-```py
-exe.execute(metric_list=['metric_name'])
-```
-This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
-
-### Step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
-```py
-metric_results = exe.get_results()
-print(metric_results)
-```
-#### exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
-
-#### print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
-## **Evaluation**
-Evaluating the performance of your AI agent is crucial to ensuring that it operates effectively and meets the desired goals. AgentNeo provides built-in evaluation tools that enable you to assess various aspects of your agent’s performance systematically.
-### Metrics Evaluation
-In AgentNeo, you can evaluate various metrics to gauge your AI agent's performance. Here are the supported metrics:
-- Goal Decomposition Efficiency (goal_decomposition_efficiency): Measures how effectively the agent breaks down larger goals into actionable steps.
-- Goal Fulfillment Rate (goal_fulfillment_rate): Assesses the percentage of goals successfully achieved by the agent.
-- Tool Correctness Metric (tool_correctness_metric): Evaluates the accuracy of the tools used by the agent during its operations.
-- Tool Call Success Rate Metric (tool_call_success_rate_metric): Measures the success rate of the agent’s calls to external tools or APIs.
-### Running Multiple Metrics
-To evaluate multiple metrics simultaneously, you can provide a list of metric names when executing the evaluation:
-```py
-exe.execute(metric_list=['metric_name1', 'metric_name2', ...])
-```
-You can also customize the evaluation by passing your own configuration and metadata related to the metric:
-```py
-exe.execute(metric_list=['metric_name'], config={}, metadata={})
-```
-This flexibility allows you to tailor the evaluation process to your specific needs and gather more relevant insights into your AI agent's performance.
-## Stop Tracer
 ```py
 tracer.stop()
 ```
 This  method signals the end of the tracing session, ensuring that all recorded data related to your agent's execution is finalized and saved for later analysis.
+
+## **Execution**
+Utilizing the Execution class in AgentNeo provides you with a powerful way to gain insights into your application's performance and flow. By running specific metrics and retrieving detailed execution results, you can visualize how your AI agent operates under different conditions
+Here's how to do it:
+#### Step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
+
+```py
+exe = Evaluation(session=neo_session, trace_id=tracer.trace_id)
+```
+
+neo_session: This refers to the current session you established, ensuring that all metrics and traces are logged correctly.
+
+trace_id=1: This unique identifier allows you to focus on a specific trace within your session, providing clarity in your evaluations.
+
+
+#### Step 2. Retrieve and Print Results: Obtain the results of the evaluation and print them:
+```py
+metric_results = exe.get_results()
+print(metric_results)
+```
+exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
+
+print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
+
 ## **Launch Dashboard**
 ```py
 neo_session.launch_dashboard()
