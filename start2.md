@@ -3,13 +3,17 @@
 ## Introduction
 ### **Observability and Evaluation of AI Agentic applications**
 AgentNeo helps AI engineers build better AI from development through deployment.AgentNeo include:
-- [Creating projects ](#Creating_projects)
-- Trace LLM Calls,Agents and Tools
-- Execution Graph Visualization
-- [Evaluation_Tools](#Evaluation_Tools)
-## Creating projects
-dada;dada
-
+- [**Creating session**](#creatingsession)
+- [**Tracer**](#Tracer)
+- [**Execution**](#Execution)
+- [**Evaluation**](#Evaluation)
+## **Creating session**
+Initialize AgentNeo Session
+To start using AgentNeo, you'll need to initialize the session. Here’s an example that shows how to initialize an AgentNeo session:
+```py 
+neo_session = AgentNeo(session_name="my_session")
+neo_session.create_project(project_name="my_project")
+```
 ## Step 1: Install the AgentNeo Package
 Run the following command to install the agentneo package:
 
@@ -29,7 +33,7 @@ Here’s a brief overview of what each module does:
 - Evaluation: This might be used to evaluate the performance of the agent based on metrics or goals.
 - launch_dashboard: This function launches a dashboard to visualize and monitor the agent’s performance in real-time.
 
-## Step 3: Load .env Variables
+## Creating session
 AgentNeo may require environment variables for configuration, such as API keys or other credentials. You'll likely use the python-dotenv package to load variables from a .env file.
 
 Ensure you have python-dotenv installed:
@@ -58,7 +62,7 @@ To start using AgentNeo, you'll need to initialize the session. Here’s an exam
 neo_session = AgentNeo(session_name="my_session")
 neo_session.create_project(project_name="my_project")
 ```
-## Evaluation_Tools
+## **Tracer**
 
 Tracing allows you to log and track the flow of the agent's actions and decisions for debugging and evaluation.
 ```py
