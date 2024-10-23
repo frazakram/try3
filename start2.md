@@ -69,7 +69,7 @@ exe.execute(metric_list=['metric_name'])
 metric_results = exe.get_results()
 print(metric_results)
 ```
-#### exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
+#### - exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
 
-#### print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
+#### - print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
 This process allows you to systematically evaluate and analyze your AI agent's performance based on the defined metrics, facilitating data-driven improvements.
