@@ -62,14 +62,21 @@ exe = Execution(session=neo_session, trace_id=1)
 ```py
 exe.execute(metric_list=['metric_name'])
 ```
-#### metric_list=['metric_name']:This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
+#### metric_list=['metric_name']: This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
 
 ### Step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
 ```py
 metric_results = exe.get_results()
 print(metric_results)
 ```
-#### - exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
+#### exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
 
-#### - print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
+#### print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
 This process allows you to systematically evaluate and analyze your AI agent's performance based on the defined metrics, facilitating data-driven improvements.
+## **Evaluation**
+Evaluating the performance of your AI agent is crucial to ensuring that it operates effectively and meets the desired goals. AgentNeo provides built-in evaluation tools that enable you to assess various aspects of your agent’s performance systematically.
+### **Key Aspects of Performance Evaluation**
+- Metric Tracking: AgentNeo enables you to define and track performance metrics such as accuracy, response time, and error rates. You can evaluate individual metrics or use a comprehensive set for a holistic view of your agent's performance.
+
+- Execution of Evaluations: By creating an Execution instance, you can initiate the evaluation process for your AI agent. This allows you to run specific metrics and retrieve results for detailed analysis
+
