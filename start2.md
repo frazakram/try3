@@ -88,5 +88,6 @@ print(metric_results): Printing the results provides real-time insights into you
 ```py
 neo_session.launch_dashboard()
 ```
+Here's what the dashboard looks like once it's launched.
 # ![Dashboard](https://raw.githubusercontent.com/raga-ai-hub/AgentNeo/v1.1/docs/assets/analysis1.png)
 To visualize and analyze the performance data collected during your AI agent's execution, you can launch the interactive dashboard using the neo_session.launch_dashboard() method. This feature provides a user-friendly interface for exploring the metrics and execution traces.
