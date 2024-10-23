@@ -7,6 +7,7 @@ AgentNeo helps AI engineers build better AI from development through deployment.
 - [**Tracer**](#Tracer)
 - [**Execution**](#Execution)
 - [**Evaluation**](#Evaluation)
+- [**Launch Dashboard**](#LaunchDashboard)
 ## Get started with our guides
 ### Step 1: Install the AgentNeo Package
 Run the following command to install the agentneo package:
@@ -45,6 +46,24 @@ How to Initialize and Start the Tracer
 tracer = Tracer(session=neo_session)
 tracer.start()
 ```
+### Example
+```py
+@tracer.trace_llm("my_llm_call")
+async def my_llm_function():
+    # Your LLM call here
+    pass
+
+@tracer.trace_tool("my_tool")
+def my_tool_function():
+    # Your tool logic here
+    pass
+
+@tracer.trace_agent("my_agent")
+def my_agent_function():
+    # Your agent logic here
+    pass
+```
+After using execution and evalution model you have to [Stop Tracer](#stoptracer)
 ## **Execution**
 Utilizing the Execution class in AgentNeo provides you with a powerful way to gain insights into your application's performance and flow. By running specific metrics and retrieving detailed execution results, you can visualize how your AI agent operates under different conditions
 Here's how to do it:
@@ -90,3 +109,13 @@ You can also customize the evaluation by passing your own configuration and meta
 exe.execute(metric_list=['metric_name'], config={}, metadata={})
 ```
 This flexibility allows you to tailor the evaluation process to your specific needs and gather more relevant insights into your AI agent's performance.
+## Stop Tracer
+```py
+tracer.stop()
+```
+This  method signals the end of the tracing session, ensuring that all recorded data related to your agent's execution is finalized and saved for later analysis.
+## **Launch Dashboard**
+```py
+neo_session.launch_dashboard()
+```
+To visualize and analyze the performance data collected during your AI agent's execution, you can launch the interactive dashboard using the neo_session.launch_dashboard() method. This feature provides a user-friendly interface for exploring the metrics and execution traces.
