@@ -64,18 +64,18 @@ This  method signals the end of the tracing session, ensuring that all recorded 
 ## **Execution**
 Utilizing the Execution class in AgentNeo provides you with a powerful way to gain insights into your application's performance and flow. By running specific metrics and retrieving detailed execution results, you can visualize how your AI agent operates under different conditions
 Here's how to do it:
-#### Step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
+### Step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
 
 ```py
 exe = Evaluation(session=neo_session, trace_id=tracer.trace_id)
 ```
 
-neo_session: This refers to the current session you established, ensuring that all metrics and traces are logged correctly.
+session: This refers to the current session you established, ensuring that all metrics and traces are logged correctly.
 
-trace_id=1: This unique identifier allows you to focus on a specific trace within your session, providing clarity in your evaluations.
+trace_id: This unique identifier allows you to focus on a current  tracer within your session, providing clarity in your evaluations.
 
 
-#### Step 2. Retrieve and Print Results: Obtain the results of the evaluation and print them:
+### Step 2. Retrieve and Print Results: Obtain the results of the evaluation and print them:
 ```py
 metric_results = exe.get_results()
 print(metric_results)
