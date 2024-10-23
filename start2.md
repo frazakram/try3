@@ -58,8 +58,8 @@ To start using AgentNeo, you'll need to initialize the session. Here’s an exam
 neo_session = AgentNeo(session_name="my_session")
 neo_session.create_project(project_name="my_project")
 ```
-Evaluation_Tools
-## Step 5: Start Tracing
+## Evaluation_Tools
+
 Tracing allows you to log and track the flow of the agent's actions and decisions for debugging and evaluation.
 ```py
 tracer = Tracer(session=neo_session)
