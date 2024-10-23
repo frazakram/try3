@@ -72,11 +72,21 @@ print(metric_results)
 #### exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
 
 #### print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
-This process allows you to systematically evaluate and analyze your AI agent's performance based on the defined metrics, facilitating data-driven improvements.
 ## **Evaluation**
 Evaluating the performance of your AI agent is crucial to ensuring that it operates effectively and meets the desired goals. AgentNeo provides built-in evaluation tools that enable you to assess various aspects of your agent’s performance systematically.
-### **Key Aspects of Performance Evaluation**
-- Metric Tracking: AgentNeo enables you to define and track performance metrics such as accuracy, response time, and error rates. You can evaluate individual metrics or use a comprehensive set for a holistic view of your agent's performance.
-
-- Execution of Evaluations: By creating an Execution instance, you can initiate the evaluation process for your AI agent. This allows you to run specific metrics and retrieve results for detailed analysis
-
+### Metrics Evaluation
+In AgentNeo, you can evaluate various metrics to gauge your AI agent's performance. Here are the supported metrics:
+- Goal Decomposition Efficiency (goal_decomposition_efficiency): Measures how effectively the agent breaks down larger goals into actionable steps.
+- Goal Fulfillment Rate (goal_fulfillment_rate): Assesses the percentage of goals successfully achieved by the agent.
+- Tool Correctness Metric (tool_correctness_metric): Evaluates the accuracy of the tools used by the agent during its operations.
+- Tool Call Success Rate Metric (tool_call_success_rate_metric): Measures the success rate of the agent’s calls to external tools or APIs.
+### Running Multiple Metrics
+To evaluate multiple metrics simultaneously, you can provide a list of metric names when executing the evaluation:
+```py
+exe.execute(metric_list=['metric_name1', 'metric_name2', ...])
+```
+You can also customize the evaluation by passing your own configuration and metadata related to the metric:
+```py
+exe.execute(metric_list=['metric_name'], config={}, metadata={})
+```
+This flexibility allows you to tailor the evaluation process to your specific needs and gather more relevant insights into your AI agent's performance.
