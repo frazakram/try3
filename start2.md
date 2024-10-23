@@ -51,3 +51,21 @@ Evaluating the performance of your AI agent is crucial to ensuring that it opera
 - Metric Tracking: AgentNeo enables you to define and track performance metrics such as accuracy, response time, and error rates. You can evaluate individual metrics or use a comprehensive set for a holistic view of your agent's performance.
 
 - Execution of Evaluations: By creating an Execution instance, you can initiate the evaluation process for your AI agent. This allows you to run specific metrics and retrieve results for detailed analysis.
+To assess your AI agent's performance, you can use the Execution class from AgentNeo. Here's how to do it:
+
+### step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
+
+```py
+exe = Execution(session=neo_session, trace_id=1)
+```
+###step 2. Run a Metric: Execute a specific performance metric by passing its name in a list:
+
+```py
+exe.execute(metric_list=['metric_name'])
+```
+###step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
+```py
+metric_results = exe.get_results()
+print(metric_results)
+```
+This process allows you to systematically evaluate and analyze your AI agent's performance based on the defined metrics, facilitating data-driven improvements.
