@@ -45,27 +45,31 @@ How to Initialize and Start the Tracer
 tracer = Tracer(session=neo_session)
 tracer.start()
 ```
-## **Evaluation**
-Evaluating the performance of your AI agent is crucial to ensuring that it operates effectively and meets the desired goals. AgentNeo provides built-in evaluation tools that enable you to assess various aspects of your agent’s performance systematically.
-### **Key Aspects of Performance Evaluation**
-- Metric Tracking: AgentNeo enables you to define and track performance metrics such as accuracy, response time, and error rates. You can evaluate individual metrics or use a comprehensive set for a holistic view of your agent's performance.
+## **Execution**
+Utilizing the Execution class in AgentNeo provides you with a powerful way to gain insights into your application's performance and flow. By running specific metrics and retrieving detailed execution results, you can visualize how your AI agent operates under different conditions
+Here's how to do it:
 
-- Execution of Evaluations: By creating an Execution instance, you can initiate the evaluation process for your AI agent. This allows you to run specific metrics and retrieve results for detailed analysis.
-To assess your AI agent's performance, you can use the Execution class from AgentNeo. Here's how to do it:
-
-### step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
+### Step 1. Create an Execution Instance: Initialize an Execution object by providing the session and trace ID:
 
 ```py
 exe = Execution(session=neo_session, trace_id=1)
 ```
-###step 2. Run a Metric: Execute a specific performance metric by passing its name in a list:
+
+#### neo_session: This refers to the current session you established, ensuring that all metrics and traces are logged correctly.
+#### trace_id=1: This unique identifier allows you to focus on a specific trace within your session, providing clarity in your evaluations.
+### Step 2. Run a Metric:After executing the metric, you can obtain the results, which provides detailed insights into the performance metrics you've defined
 
 ```py
 exe.execute(metric_list=['metric_name'])
 ```
-###step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
+#### metric_list=['metric_name']:This allows for targeted performance assessment, letting you analyze specific aspects of your application’s flow.
+
+### Step 3. Retrieve and Print Results: Obtain the results of the evaluation and print them:
 ```py
 metric_results = exe.get_results()
 print(metric_results)
 ```
+#### exe.get_results(): This method retrieves the evaluation results for the executed metrics, which may include numerical values, trends, or visual representations based on the metric's nature.
+
+#### print(metric_results): Printing the results provides real-time insights into your AI agent's performance, helping you identify improvement areas or confirm that it meets the expected performance criteria.
 This process allows you to systematically evaluate and analyze your AI agent's performance based on the defined metrics, facilitating data-driven improvements.
