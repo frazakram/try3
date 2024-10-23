@@ -36,7 +36,9 @@ neo_session = AgentNeo(session_name="my_session")
 neo_session.create_project(project_name="my_project")
 ```
 ## **Tracer**
-The Tracer is a critical component of AgentNeo that facilitates the monitoring and recording of your agent's activities during execution. It provides insights into how the agent operates, allowing you to debug issues, analyze performance, and evaluate decision-making processes. By implementing tracing, you can capture detailed logs of your agent's interactions with various components, such as external APIs or internal functions.
+The Tracer is a critical component of AgentNeo that facilitates the monitoring and recording of your agent's activities during execution. It provides insights into how the agent operates, allowing you to debug issues, analyze performance, and evaluate decision-making processes. 
+- Trace LLM Calls: Monitor and analyze LLM calls from various providers like OpenAI and LiteLLM.
+- Trace Agents and Tools: Instrument and monitor your agents and tools to gain deeper insights into their behavior.
 
 How to Initialize and Start the Tracer
 ```py
