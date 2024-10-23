@@ -1,5 +1,5 @@
-![**AgentNeo**][agentneo-logo]
-[agentneo-logo]:https://docs.raga.ai/~gitbook/image?url=https%3A%2F%2F1811327582-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FYbIiNdp1QbG4avl7VShw%252Ficon%252FdbhstYExc7neijc5XvVC%252Flogo%2520only%2520svg%25201.png%3Falt%3Dmedia%26token%3D16999011-17eb-41c9-9ee8-26837edcf88f&width=32&dpr=1&quality=100&sign=f91ac5a2&sv=1
+![**AgentNeo**](https://docs.raga.ai/~gitbook/image?url=https%3A%2F%2F1811327582-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FYbIiNdp1QbG4avl7VShw%252Ficon%252FdbhstYExc7neijc5XvVC%252Flogo%2520only%2520svg%25201.png%3Falt%3Dmedia%26token%3D16999011-17eb-41c9-9ee8-26837edcf88f&width=32&dpr=1&quality=100&sign=f91ac5a2&sv=1)
+
 
 ## Introduction
 ### **Observability and Evaluation of AI Agentic applications**
