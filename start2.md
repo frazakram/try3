@@ -7,6 +7,19 @@ AgentNeo helps AI engineers build better AI from development through deployment.
 - [**Tracer**](#Tracer)
 - [**Execution**](#Execution)
 - [**Evaluation**](#Evaluation)
+## Get started with our guides
+### Step 1: Install the AgentNeo Package
+Run the following command to install the agentneo package:
+
+```py
+pip install agentneo
+```
+### Step 2: Import Necessary Modules
+Now that you've installed agentneo and set up your environment variables, it's time to import the required modules. Here's how to proceed:
+```py 
+# Import modules from agentneo
+from agentneo import AgentNeo, Tracer, Evaluation, launch_dashboard
+```
 ## **Creating session**
 Initialize AgentNeo Session
 To start using AgentNeo, you'll need to initialize the session. Here’s an example that shows how to initialize an AgentNeo session:
@@ -14,18 +27,7 @@ To start using AgentNeo, you'll need to initialize the session. Here’s an exam
 neo_session = AgentNeo(session_name="my_session")
 neo_session.create_project(project_name="my_project")
 ```
-## Step 1: Install the AgentNeo Package
-Run the following command to install the agentneo package:
 
-```py
-pip install agentneo
-```
-## Step 2: Import Necessary Modules
-Now that you've installed agentneo and set up your environment variables, it's time to import the required modules. Here's how to proceed:
-```py 
-# Import modules from agentneo
-from agentneo import AgentNeo, Tracer, Evaluation, launch_dashboard
-```
 Here’s a brief overview of what each module does:
 
 - AgentNeo: This class will be used to initialize and manage your AI agent.
